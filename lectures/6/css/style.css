@@ -4,3 +4,97 @@
 a {
     color: #70579D;
 }
+#main{
+    max-width: 800px;
+    margin: auto;
+}
+.article{
+    border: 1px solid #70579D;
+    border-radius: 12px;
+    width:auto;
+    margin: 0 0 10px 0 ;
+    padding: 10px 12px;
+    background-color: black;
+    color: #f1f1f1;
+}
+.article-name h1 {
+    font-family: 'Bangers',cursive ;
+    letter-spacing: 3px;
+    color: blueviolet;
+}
+.article-opt{
+    float: right;
+    border-radius: 15px;
+    height:24px;
+    line-height: 4.5;
+    margin: 0 15px 0 0 ;
+}
+.article-opt:hover{
+    color: blueviolet;
+}
+.article-overview{
+    font-size: 75%;
+}
+.article-overview a{
+    text-decoration: none;
+}
+.article-overview a:hover{
+    text-decoration: underline;
+}
+.pipe{
+    margin: 0 5px;
+}
+.text-muted{
+    opacity: 0.65;
+}
+.text-small{
+    font-size: 85%;
+}
+.lister-list{
+    margin-top: 30px;
+    width: 100%;
+}
+.lister-list > .lister-item{
+    margin-bottom: 3px;
+    padding: 10px 10px 20px;
+}
+.lister-list > .lister-item > .lister-item-image{
+    display: inline-block;
+}
+.lister-list > .lister-item > .lister-item-image img{
+    width:150px;
+    height: 200px;
+    box-shadow: 3px 1px 3px 2px rgba(255,255,255,0.5);
+}
+.lister-list > .lister-item > .lister-item-content{
+    width: 78%;
+    float: right;
+}
+.lister-list > .lister-item > .lister-item-content > h3{
+    margin: 0 0 0 3px;
+}
+.lister-list > .lister-item > .lister-item-content > h3 > a{
+    font-family: 'Bangers',cursive ;
+    letter-spacing: 3px;
+    text-decoration: none;
+}
+.lister-list > .lister-item > .lister-item-content > h3 > .lister-item-year{
+    font-size: small;
+    font-weight: normal;
+}
+.lister-list > .lister-item > .lister-item-content > .lister-item-summary{
+    font-size: 13px;
+    line-height: 140%;
+    color: #ada294;
+}
+.lister-list > .lister-item > .lister-item-content > .lister-item-summary:first-letter{
+    font-size: 1.2em;
+}
+p.lister-item-summary::selection{
+    color: yellow;
+    background: red;
+}
+.lister-list > .lister-item > .lister-item-content a{
+    text-decoration: none;
+    color:#70579D;
+}
