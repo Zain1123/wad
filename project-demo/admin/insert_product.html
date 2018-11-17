@@ -11,17 +11,24 @@
         * {
             font-family: 'Old Standard TT', serif;
         }
+        #image{
+            margin-top: 13px;
+        }
+        .set{
+            margin-top: -6px;
+            margin-bottom: -15px;
+        }
     </style>
 </head>
 <body>
 <div class="container">
-    <h1 class="text-center my-4"><i class="fas fa-plus fa-md"></i> <span class="d-none d-sm-inline"> Add New </span> Product </h1>
+    <h1 class="text-center my-5"><i class="fas fa-plus fa-md"></i> <span class="d-none d-sm-inline"> Add New </span> Product </h1>
     <form>
         <div class="row">
-            <div class="">
-                <label for="pro_title" class="float-md-right"> <span class="d-sm-none d-md-inline"> Product </span> Title:</label>
+            <div style="margin-top: 3px" class="col-lg-2 col-md-3 col-sm-3 ">
+                <label for="pro_title" class="float-md-right d-none d-md-inline d-lg-inline d-sm-inline"> <span class="d-sm-none d-md-inline"> Product </span> Title:</label>
             </div>
-            <div class="">
+            <div class="set col-lg-4 col-md-9 col-sm-9">
                 <div class="input-group">
                     <div class="input-group-prepend">
                         <div class="input-group-text"><i class="fas fa-file-signature"></i></div>
@@ -29,10 +36,10 @@
                     <input type="text" class="form-control" id="pro_title" name="pro_title" placeholder="Enter Product Title" >
                 </div>
             </div>
-            <div class="">
-                <label for="pro_cat" class="float-md-right"><span class="d-sm-none d-md-inline"> Product </span> Category:</label>
+            <div style="margin-top: 8px" class="col-lg-2 col-sm-3 col-md-3">
+                <label for="pro_cat" class="float-md-right d-none d-md-inline d-lg-inline d-sm-inline"><span class="d-sm-none d-md-inline"> Product </span> Category:</label>
             </div>
-            <div class=" mt-3 mt-lg-0">
+            <div class=" mt-3 mt-lg-0 col-lg-4 col-md-9 col-sm-9 ">
                 <div class="input-group">
                     <div class="input-group-prepend">
                         <div class="input-group-text"><i class="fas fa-list-alt"></i></div>
@@ -48,11 +55,11 @@
                 </div>
             </div>
         </div>
-        <div class="row my-3">
-            <div class="">
-                <label for="pro_brand" class="float-md-right"> <span class="d-sm-none d-md-inline"> Product </span> Brand:</label>
+        <div class="row my-3" >
+            <div  class="col-lg-2 col-md-3 col-sm-3">
+                <label for="pro_brand" class="float-md-right d-none d-md-inline d-lg-inline d-sm-inline"> <span class="d-sm-none d-md-inline"> Product </span> Brand:</label>
             </div>
-            <div class="">
+            <div class=" set col-lg-4 col-md-9 col-sm-9" >
                 <div class="input-group">
                     <div class="input-group-prepend">
                         <div class="input-group-text"><i class="fas fa-stamp"></i></div>
@@ -68,10 +75,10 @@
                     </select>
                 </div>
             </div>
-            <div class="">
-                <label for="pro_img" class="float-md-right"><span class="d-sm-none d-md-inline"> Product </span> Image:</label>
+            <div id="image" class="col-lg-2 col-md-3 col-sm-3">
+                <label for="pro_img" class="float-md-right d-none d-md-inline d-lg-inline d-sm-inline"><span class="d-sm-none d-md-inline"> Product </span> Image:</label>
             </div>
-            <div class=" mt-3 mt-lg-0">
+            <div class=" mt-3 mt-lg-0 col-lg-4 col-md-9 col-sm-9">
                 <div class="input-group">
                     <div class="input-group-prepend">
                         <div class="input-group-text"><i class="far fa-image"></i></div>
@@ -81,21 +88,21 @@
             </div>
         </div>
         <div class="row my-3">
-            <div class="">
-                <label for="pro_price" class="float-md-right"> <span class="d-sm-none d-md-inline"> Product </span> Price:</label>
+            <div  class="col-lg-2 col-md-3 col-sm-3">
+                <label for="pro_price" class="float-md-right d-none d-md-inline d-lg-inline d-sm-inline"> <span class="d-sm-none d-md-inline"> Product </span> Price:</label>
             </div>
-            <div class="">
-                <div class="input-group">
+            <div class=" set col-lg-4 col-md-9 col-sm-9" >
+                <div class="input-group" >
                     <div class="input-group-prepend">
                         <div class="input-group-text"><i class="fas fa-money-bill"></i></div>
                     </div>
                     <input class="form-control" id="pro_price" name="pro_price" placeholder="Enter Product Price">
                 </div>
             </div>
-            <div class="">
-                <label for="pro_kw" class="float-md-right"><span class="d-sm-none d-md-inline"> Product </span> Keyword:</label>
+            <div style="margin-top: 15px;" class="col-lg-2 col-md-3 col-sm-3">
+                <label for="pro_kw" class="float-md-right d-none d-md-inline d-lg-inline d-sm-inline"><span class="d-sm-none d-md-inline"> Product </span> Keyword:</label>
             </div>
-            <div class=" mt-3 mt-lg-0">
+            <div class=" mt-3 mt-lg-0 col-lg-4 col-md-9 col-sm-9 set">
                 <div class="input-group">
                     <div class="input-group-prepend">
                         <div class="input-group-text"><i class="fas fa-key"></i></div>
@@ -105,10 +112,10 @@
             </div>
         </div>
         <div class="row my-3">
-            <div class="">
-                <label for="pro_desc" class="float-md-right"><span class="d-sm-none d-md-inline"> Product </span> Detail:</label>
+            <div style="margin-top: 5px" class="col-lg-2 col-md-3 col-sm-3">
+                <label for="pro_desc" class="float-md-right d-none d-md-inline d-lg-inline d-sm-inline"><span class="d-sm-none d-md-inline"> Product </span> Detail:</label>
             </div>
-            <div class="">
+            <div class="col-lg-4 col-md-9 col-sm-9 ">
                 <div class="input-group">
                     <div class="input-group-prepend">
                         <div class="input-group-text"><i class="far fa-comment-alt"></i></div>
@@ -118,8 +125,8 @@
             </div>
         </div>
         <div class="row my-3">
-            <div class=""></div>
-            <div class="">
+            <div class="col-lg-2 col-md-3 col-sm-3"></div>
+            <div class="col-lg-4 col-md-9 col-sm-9">
                 <button type="submit" class="btn btn-primary btn-block"><i class="fas fa-plus"></i> Insert Now </button>
             </div>
         </div>
