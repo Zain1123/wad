@@ -19,19 +19,53 @@ var questions = [{
         "for",
         "none of the above"],
     correctAnswer : 1
+},{
+    question : "Which of these are front-end language?",
+    choices : [ "Html",
+        "CSS",
+        "Javascript",
+        "All of these"],
+    correctAnswer : 4
+},{
+    question : "How can declare string variable in javascript?",
+    choices : [ "Var",
+        "int",
+        "char",
+        "string"],
+    correctAnswer : 1
 }];
 
 var currentQuestion = 0;
 var correctAnswers = 0;
 var quizOver = false;
+// var number = choices.length;
+
 displayCurrentQuestion();
 document.getElementById("quiz-message").style.display = 'none';
 function displayNext() {
+    if(currentQuestion < questions.length) {
+        currentQuestion++;
+        document.getElementById("choice-list").innerHTML='';
+        displayCurrentQuestion();
+    }
+    else{
+        document.getElementById("next-btn").innerText='Play again';
+        currentQuestion=0;
+    }
+    if(currentQuestion===0)
+    {
+        document.getElementById("next-btn").innerText='Next Question';
+    }
+
     /*Write your code here */
 }
 
 function displayCurrentQuestion() {
     /*Write your code here */
+        document.getElementById("question").innerText = questions[currentQuestion].question;
+        for(var i=0;i<4;i++) {
+        document.getElementById("choice-list").innerHTML +='<li><input type="radio">'+questions[currentQuestion].choices[i]+'</li>';
+        }
 }
 
 function resetQuiz() {
