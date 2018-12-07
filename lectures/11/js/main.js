@@ -209,7 +209,7 @@ function add() {
         document.getElementById('message').style.display = 'none';
     }
     var todos = getTodos();
-    todos.push({task: task, isDone: false});
+    todos.push(task);
     document.getElementById('task').value = '';
     localStorage.setItem('todo',JSON.stringify(todos));
     show();
@@ -227,7 +227,8 @@ function remove() {
 function change(){
     var id = this.getAttribute('id');
     var todos = getTodos();
-    todos[id] = document.getElementById('task').value;
+    todos.splice(id,1,document.getElementById('task').value);
+    document.getElementById('task').value = '';
     localStorage.setItem('todo',JSON.stringify(todos));
     show();
     return false;
@@ -240,8 +241,8 @@ function show() {
     ul.classList.add("list-group");
     for(var i=0; i<todos.length; i++){
         var li = document.createElement('li');
-        li.innerHTML  = '<li>' + todos[i].task + '</li>' +'<button class="btn btn-primary" id="' + i + '">' +
-            '<i class="fa fa-trash-o"></i> ' +
+        li.innerHTML  = '<li>' + todos[i]+ '</li>' +'<button class="btn btn-primary" id="' + i + '">' +
+            '<i class="fas fa-edit"></i> ' +
             '<span class="d-none d-sm-inline"> Edit</span> </button>'+
             '<button class="btn btn-danger" id="' + i + '">' +
             '<i class="fa fa-trash-o"></i> ' +

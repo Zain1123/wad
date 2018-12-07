@@ -4,7 +4,7 @@ var questions = [{
         "The Web server",
         "A central machine deep within Netscape's corporate offices",
         "None of the above"],
-    correctAnswer : 0
+    correctAnswer : 2
 },{
     question : "Which of the following can't be done with client-side JavaScript?",
     choices : [ "Validating a form",
@@ -43,29 +43,26 @@ var quizOver = false;
 displayCurrentQuestion();
 document.getElementById("quiz-message").style.display = 'none';
 function displayNext() {
-    if(currentQuestion < questions.length) {
+    /*Write your code here */
+    if(currentQuestion < questions.length-1) {
         currentQuestion++;
+        document.getElementById("next-btn").innerText='Next Question';
         document.getElementById("choice-list").innerHTML='';
         displayCurrentQuestion();
     }
     else{
         document.getElementById("next-btn").innerText='Play again';
-        currentQuestion=0;
+        displayScore();
+        resetQuiz();
     }
-    if(currentQuestion===0)
-    {
-        document.getElementById("next-btn").innerText='Next Question';
-    }
-
-    /*Write your code here */
 }
 
 function displayCurrentQuestion() {
     /*Write your code here */
-        document.getElementById("question").innerText = questions[currentQuestion].question;
-        for(var i=0;i<4;i++) {
+    document.getElementById("question").innerText = questions[currentQuestion].question;
+    for(var i=0;i<4;i++) {
         document.getElementById("choice-list").innerHTML +='<li><input type="radio">'+questions[currentQuestion].choices[i]+'</li>';
-        }
+    }
 }
 
 function resetQuiz() {
@@ -74,8 +71,8 @@ function resetQuiz() {
     hideScore();
 }
 function displayScore() {
-    document.getElementById("result").innerHTML = "you scored: " + correctAnswers + " out of: " + questions.length;
-    document.getElementById("result").style.display = 'block';
+        document.getElementById("result").innerHTML = "you scored: " + correctAnswers + " out of: " + questions.length;
+        document.getElementById("result").style.display = 'block';
 }
 function hideScore() {
     document.getElementById("result").style.display = 'none';
