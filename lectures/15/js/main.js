@@ -17,7 +17,7 @@ function deposit(e){
             user.balance += parseInt(value_enter);
             document.getElementById("balance").innerHTML=user.balance;
             document.getElementById("deposit").value ="";
-            display(value_enter);
+            display(value_enter,1);
         }
     }
 
@@ -40,12 +40,30 @@ function withdraw(e){
                 user.balance -= parseInt(value_enter);
                 document.getElementById("balance").innerHTML=user.balance;
                 document.getElementById("withdraw").value ="";
-                display(value_enter);
+                display(value_enter,2);
             }
         }
     }
 
 }
-function display(enter){
+function display(enter,value){
+    var tr = document.createElement('tr');
+    var type;
+    if(value === 1) {
+        type = "Deposit";
+    }
+    else{
+        type = "Withdraw";
+    }
 
+    var th = document.createElement('th');
+    th.innerHTML = '<th align="left" valign="middle" scope="col">' + new Date() + '</th>';
+    tr.appendChild(th);
+    var th = document.createElement('th');
+    th.innerHTML = '<th align="left" valign="middle" scope="col">' + type + '</th>';
+    tr.appendChild(th);
+    var th = document.createElement('th');
+    th.innerHTML = '<th align="left" valign="middle" scope="col">' + enter + '</th>';
+    tr.appendChild(th);
+    document.getElementById("transaction-table").appendChild(tr);
 }
