@@ -1,5 +1,22 @@
 <?php
-require_once "db_connection.php";
+ include "function.php";
+if(isset($_POST['insert_pro'])){
+    $title = $_POST['pro_title'];
+    $cat = $_POST['pro_cat'];
+    $brand = $_POST['pro_brand'];
+    $price = $_POST['pro_price'];
+    $keyword = $_POST['pro_kw'];
+    $detail = $_POST['pro_desc'];
+
+    $input = "insert into products (pro_title,pro_cat,pro_brand,pro_price,pro_keywords,pro_desc)
+              values ('$title','$cat','$brand','$price','$keyword','$detail')";
+    echo  $input;
+    mysqli_query($con,$input);
+
+    if(!$input){
+        echo "fail";
+    }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +43,7 @@ require_once "db_connection.php";
 <body>
 <div class="container">
     <h1 class="text-center my-5"><i class="fas fa-plus fa-md"></i> <span class="d-none d-sm-inline"> Add New </span> Product </h1>
-    <form>
+    <form action="insert_product.php" method="post">
         <div class="row">
             <div style="margin-top: 3px" class="col-lg-2 col-md-3 col-sm-3 ">
                 <label for="pro_title" class="float-md-right d-none d-md-inline d-lg-inline d-sm-inline"> <span class="d-sm-none d-md-inline"> Product </span> Title:</label>
@@ -49,11 +66,8 @@ require_once "db_connection.php";
                     </div>
                     <select class="form-control" id="pro_cat" name="pro_cat">
                         <option>Select Category</option>
-                        <option>Mobile</option>
-                        <option>Laptop</option>
-                        <option>Tablet</option>
-                        <option>Watch</option>
-                        <option>Camera</option>
+                         <?php getCats();
+                         ?>
                     </select>
                 </div>
             </div>
@@ -69,12 +83,7 @@ require_once "db_connection.php";
                     </div>
                     <select class="form-control" id="pro_brand" name="pro_brand">
                         <option>Select Brand</option>
-                        <option>Apple</option>
-                        <option>Samsung</option>
-                        <option>Oppo</option>
-                        <option>Dell</option>
-                        <option>HP</option>
-                        <option>Sony</option>
+                        <?php getBrands();?>
                     </select>
                 </div>
             </div>
@@ -130,7 +139,7 @@ require_once "db_connection.php";
         <div class="row my-3">
             <div class="col-lg-2 col-md-3 col-sm-3"></div>
             <div class="col-lg-4 col-md-9 col-sm-9">
-                <button type="submit" class="btn btn-primary btn-block"><i class="fas fa-plus"></i> Insert Now </button>
+                <button type="submit" name="insert_pro" class="btn btn-primary btn-block"><i class="fas fa-plus"></i> Insert Now </button>
             </div>
         </div>
     </form>
