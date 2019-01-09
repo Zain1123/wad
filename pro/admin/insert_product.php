@@ -10,7 +10,6 @@ if(isset($_POST['insert_pro'])){
 
     $input = "insert into products (pro_title,pro_cat,pro_brand,pro_price,pro_keywords,pro_desc)
               values ('$title','$cat','$brand','$price','$keyword','$detail')";
-    echo  $input;
     mysqli_query($con,$input);
 
     if(!$input){
