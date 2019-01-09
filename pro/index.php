@@ -97,7 +97,7 @@ require "server/functions.php";
     <article id="content" class="container-fluid bg-white">
 
         <div class="row">
-                <?php display_tech(); ?>
+                <?php getPro(); ?>
         </div>
     </article>
 
