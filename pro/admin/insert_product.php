@@ -8,12 +8,14 @@ if(isset($_POST['insert_pro'])){
     $keyword = $_POST['pro_kw'];
     $detail = $_POST['pro_desc'];
 
-    $input = "insert into products (pro_title,pro_cat,pro_brand,pro_price,pro_keywords,pro_desc)
-              values ('$title','$cat','$brand','$price','$keyword','$detail')";
-    mysqli_query($con,$input);
-
-    if(!$input){
-        echo "fail";
+    $pro_image = $_FILES['pro_image']['name'];
+    $pro_image_tmp = $_FILES['pro_image']['tmp_name'];
+    move_uploaded_file($pro_image_tmp,"product_images/$pro_image");
+    $insert_product = "insert into products (pro_cat, pro_brand,pro_title,pro_price,pro_desc,pro_image,pro_keywords) 
+                                     VALUES ('$cat','$brand','$title','$price','$detail','$pro_image','$keyword');";
+    $insert_pro = mysqli_query($con, $insert_product);
+    if($insert_pro){
+        header("location: ".$_SERVER['PHP_SELF']);
     }
 }
 ?>
@@ -42,7 +44,7 @@ if(isset($_POST['insert_pro'])){
 <body>
 <div class="container">
     <h1 class="text-center my-5"><i class="fas fa-plus fa-md"></i> <span class="d-none d-sm-inline"> Add New </span> Product </h1>
-    <form action="insert_product.php" method="post">
+    <form action="insert_product.php" method="post" enctype="multipart/form-data">
         <div class="row">
             <div style="margin-top: 3px" class="col-lg-2 col-md-3 col-sm-3 ">
                 <label for="pro_title" class="float-md-right d-none d-md-inline d-lg-inline d-sm-inline"> <span class="d-sm-none d-md-inline"> Product </span> Title:</label>
@@ -94,7 +96,7 @@ if(isset($_POST['insert_pro'])){
                     <div class="input-group-prepend">
                         <div class="input-group-text"><i class="far fa-image"></i></div>
                     </div>
-                    <input class="form-control" type="file" id="pro_img" name="pro_img">
+                    <input class="form-control" type="file" id="pro_image" name="pro_image">
                 </div>
             </div>
         </div>
