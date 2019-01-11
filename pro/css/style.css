@@ -241,3 +241,6 @@ a.article:hover {
 input[name='c_name']:invalid {
     background-color: red;
 }
+input[name='c_email']:invalid {
+    background-color: red;
+}
