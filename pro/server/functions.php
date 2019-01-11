@@ -46,8 +46,7 @@ function getPro(){
         $pro_title = $row['pro_title'];
         $pro_price = $row['pro_price'];
         $pro_image = $row['pro_image'];
-        echo "
-                <div class='col-sm-6 col-md-4 col-lg-3 text-center product-summary'>
+        echo " <div class='col-sm-6 col-md-4 col-lg-3 text-center product-summary'>
                     <h5 class='text-capitalize'>$pro_title</h5>
                     <img src='admin/product_images/$pro_image'>
                     <p> <b> Rs $pro_price/-  </b> </p>
