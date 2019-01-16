@@ -106,7 +106,7 @@ require "server/functions.php";
                             <div class="input-group-text"><i class="fas fa-user"></i></div>
                         </div>
                         <input type="text" class="form-control" id="c_name" name="c_name" placeholder="Enter your name"
-                              required pattern="[012][1-9] | 3[0-1]">
+                              required pattern="[012][1-9]|3[0-1]">
                     </div>
                 </div>
                 <div class="d-none d-sm-block col-sm-3 col-md-4 col-lg-2 col-xl-2 mt-auto">
