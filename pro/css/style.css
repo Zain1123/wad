@@ -1,3 +1,4 @@
+
 :root {
     --color-custom: #1d69ab;
     --fs-nav: 1.2em;
@@ -8,7 +9,7 @@
 }
 
 .sc-color
- {
+{
     color: var(--color-custom) !important;
 }
 
@@ -237,10 +238,10 @@ a.article:hover {
     width: 180px;
     height: 180px;
 }
-
 input[name='c_name']:invalid {
     background-color: red;
 }
-input[name='c_email']:invalid {
-    background-color: red;
+input[name="c_email"]:invalid{
+    background-color: #00ff08;
 }
+
